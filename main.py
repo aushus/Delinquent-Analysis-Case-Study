@@ -33,4 +33,15 @@ from sklearn.metrics import (
 import warnings
 warnings.filterwarnings("ignore")
 
-print("Hello World")
+data = pd.read_csv("Loan_Delinquent_Dataset.csv")
+# copying data to another varaible to avoid any changes to original data
+loan = data.copy()
+
+print(loan.head())
+print(loan.shape)
+print(loan.info())
+#Checking for missing values
+print(loan.isnull().sum())
+
+# checking for duplicate values
+data.duplicated().sum()
